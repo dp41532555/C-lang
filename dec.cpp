@@ -14,12 +14,12 @@ class box
     {
         return l*b*h;
     }
-     box operator++(int)
+    box operator--()
      {
      box x;
-         x.l = l++;
-         x.b = b++;
-         x.h = h++;
+         x.l = --l;
+         x.b = --b;
+         x.h = --h;
      }
     
 };
@@ -31,7 +31,7 @@ int main()
     vol=a.getdata();
     cout<<"volume of a box is : "<<vol<<endl;
 
-    a++;
+    --a;
     vol=a.getdata();
     cout<<"after increment volume of a box is : "<<vol<<endl;
     return 0;
