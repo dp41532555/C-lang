@@ -1,8 +1,8 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class saving:
+class saving
 {
-    public:
+public:
     int x, y;
     int bal = 0;
     void sdeposite()
@@ -31,3 +31,10 @@ class saving:
         cout << "your balance is " << bal << endl;
     }
 };
+int main()
+{
+    saving a;
+    a.sdeposite();
+    a.swithdraw();
+    a.sshowbalance();
+}
