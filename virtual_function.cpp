@@ -21,6 +21,7 @@ int main()
 {
     base *p,z;
     derived a;
+    
     p=&a;
     p->display();
     p=&z;
