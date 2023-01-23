@@ -44,12 +44,11 @@ int display(int a[])
 int main()
 {
     int a[n];
-   insert(a, 10);
+    insert(a, 10);
     insert(a, 20);
-     insert(a, 30);
-     insert(a, 40);
+    insert(a, 30);
+    insert(a, 40);
     display(a);
-
-     delete(a,10);
-     display(a);
+    delete (a, 10);
+    display(a);
 }
