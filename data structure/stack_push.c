@@ -3,6 +3,38 @@
 #define n 5
 int i;
 int top = -1;
+int midinsert(int a[], int val)
+{
+    if (top >= n - 1)
+        printf("array is overflow.....\n");
+
+    else
+    {
+        for(i=n-1;i>=n/2;i--)
+        {
+            a[i] = a[i-1];
+        }
+        a[n/2] = val;
+        ++top;
+    }
+}
+int middelete(int a[])
+{
+    if (top <0)
+        printf("array is overflow.....\n");
+
+    else
+    {
+       for(i=n/2;i<n;i++)
+        {
+            a[i] = a[i+1];
+            
+        }
+        // a[i] = val;
+         top--;
+           
+    }
+}
 int display(int a[])
 {
     for (i = 0; i <= top; i++)
@@ -37,7 +69,7 @@ int Firstinsert(int a[], int val)
         ++top;
     }
 }
-int Firstdelete(int a[], int val)
+int Firstdelete(int a[])
 {
     if (top <0)
         printf("array is overflow.....\n");
@@ -46,10 +78,9 @@ int Firstdelete(int a[], int val)
     {
        for(i=0;i<n;i++)
         {
-            a[i-1] = a[i];
+            a[i] = a[i+1];
             
         }
-         a[i] = val;
          top--;
            
     }
@@ -79,8 +110,11 @@ int main()
     // pop(a);
     //Firstinsert(a,50);
    // Firstinsert(a,60);
-    Firstdelete(a,10);
- Firstdelete(a,20); 
+   Firstdelete(a);
+//  Firstdelete(a); 
+    midinsert(a,50);
+    display(a);
+   middelete(a);
 
     display(a);
 }
