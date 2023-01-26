@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #define n 7
 int i;
@@ -31,10 +30,8 @@ int middelete(int a[],int val)
         r--;
     }
 }
-
-int firstinsert(int a[],int val)
+int firstinsert(int a[], int val)
 {
-
     if(f<0)
     {
         f++;
@@ -49,7 +46,7 @@ int firstinsert(int a[],int val)
        a[--f] = val;   
 }
 
-int lastdelete(int a[],int val)
+int lastdelete(int a[])
 {
     if(f==r)
     {
@@ -64,8 +61,9 @@ int lastdelete(int a[],int val)
       --r;
 }
 
-int insert(int a[], int val)
+int lastinsert(int a[], int val)
 {
+    
     if (r >= n - 1)
         printf("queue is overflow.....\n");
 
@@ -79,7 +77,7 @@ int insert(int a[], int val)
         a[++r] = val;
     }
 }
-int delete(int a[], int val)
+int firstdelete(int a[])
 {
     if (f < 0)
         printf("array is underflow.....\n");
@@ -104,20 +102,59 @@ int display(int a[])
 int main()
 {
     int a[n];
-    insert(a, 10);
-    insert(a, 20);
-    insert(a, 30);
-    insert(a, 40);
-    insert(a,50);
-    display(a);
-    //delete (a, 10);
-    //display(a);
-    //firstinsert(a,50);
-    //display(a);
-    //lastdelete(a,50);
-     //display(a);
-     midinsert(a,14);
-     display(a);
-     middelete(a,14);
-     display(a);
+    int ch,x;
+
+        printf("=====================\n");
+        printf("1.last insert element: \n");
+        printf("2.last delete element: \n");
+        printf("3.first insert element: \n");
+        printf("4.first delete element: \n");
+        printf("5.display\n");
+        printf("0.exit\n");
+        printf("=====================\n");
+    while(ch!=0)
+    {
+        
+        printf("enter your choice: ");
+        scanf("%d",&ch);
+
+        switch(ch)
+        {
+          case 1:
+             printf("insert element: ");
+             scanf("%d",&x);
+             lastinsert(a,x);
+             break;
+          
+          case 2:
+             lastdelete(a);
+             break;
+
+          
+          case 3:
+            printf("insert element: ");
+             scanf("%d",&x);
+             firstinsert(a,x);
+             break;
+
+          
+          case 4:
+             firstdelete(a);
+             break;
+
+          case 5:
+             display(a) ;  
+
+          case 0:
+             break;
+            default:
+                printf("Worng choice.....!");
+        }
+        
+    }
 }
+
+
+
+
+ 
