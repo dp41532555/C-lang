@@ -9,6 +9,7 @@ int r = -1;
 int insert(int a[], int val)
 {
     if ((r+1) % n == f)
+    
         printf("queue is overflow.....\n");
 
     else if (r < 0)
