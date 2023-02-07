@@ -135,21 +135,20 @@ void insertfirst(int val)
 }
 void deletefirst()
 {
-    struct node *ptr;
-    struct node *prev;
-    struct node *temp;
+    struct node *ptr=head;
+    struct node *temp= head;
 
     if (head == NULL)
         printf("already empty..\n");
-    else if (head->next == NULL)
+    else if (ptr->next == head)
     {
         head = NULL;
         free(head);
     }
     else
     {
-        ptr = head;
-        while (ptr->next != NULL)
+       // ptr = head;
+        while (ptr->next !=head)
             ptr = ptr->next;
         ptr->next = head->next;
         head = temp->next;
@@ -158,18 +157,71 @@ void deletefirst()
 }
 int main()
 {
-    insertEnd(1);
-    insertEnd(2);
-    insertEnd(3);
-    insertEnd(4);
-    insertEnd(5);
-    insertEnd(6);
-    insertfirst(10);
-    print();
-    deletefirst();
-    print();
+    int a;
+    int ch,x;
 
-    // deleteEnd();
-    // deleteEnd();
-    // deleteEnd();
+        printf("=====================\n");
+        printf("1.last insert element: \n");
+        printf("2.last delete element: \n");
+        printf("3.first insert element: \n");
+        printf("4.first delete element: \n");
+        printf("5.mid insert element: \n");
+        printf("6.mid delete element: \n");
+        printf("7.display\n");
+        printf("0.exit\n");
+        printf("=====================\n");
+    while(ch!=0)
+    {
+        
+        printf("enter your choice: ");
+        scanf("%d",&ch);
+
+        switch(ch)
+        {
+          case 1:
+             printf("insert element at last: ");
+             scanf("%d",&x);
+             insertEnd(x);
+             break;
+          
+          case 2:
+             deleteEnd();
+             break;
+
+          
+          case 3:
+            printf("insert element at first: ");
+             scanf("%d",&x);
+             insertfirst(x);
+             break;
+
+          
+          case 4:
+             deletefirst();
+             break;
+
+          case 5:
+             printf("insert element at position : ");
+             scanf("%d",&x);
+             printf("insert position : ");
+             scanf("%d",&a);
+             midinsert(x,a);
+             break;
+
+          case 6:
+             printf("insert position: ");
+             scanf("%d",&x);
+             middelete(x);
+             break;
+
+          case 7:
+             print() ;  
+
+          case 0:
+             break;
+            default:
+                printf("Worng choice.....!");
+        }
+        
+    }
 }
