@@ -161,14 +161,14 @@ int main()
     int ch,x;
 
         printf("=====================\n");
-        printf("1.last insert element: \n");
-        printf("2.last delete element: \n");
-        printf("3.first insert element: \n");
-        printf("4.first delete element: \n");
-        printf("5.mid insert element: \n");
-        printf("6.mid delete element: \n");
-        printf("7.display\n");
-        printf("0.exit\n");
+        printf("\t1.last insert element: \n");
+        printf("\t2.last delete element: \n");
+        printf("\t3.first insert element: \n");
+        printf("\t4.first delete element: \n");
+        printf("\t5.mid insert element: \n");
+        printf("\t6.mid delete element: \n");
+        printf("\t7.display\n");
+        printf("\t0.exit\n");
         printf("=====================\n");
     while(ch!=0)
     {
