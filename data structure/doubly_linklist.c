@@ -112,17 +112,55 @@ void deletefirst()
 }
 int main()
 {
-    insertEnd(1);
-    insertEnd(2);
-    insertEnd(3);
-    insertEnd(4);
-    insertEnd(5);
-    insertEnd(6);
-    print();
-    insertfirst(10);
-    print();
-    deleteEnd();
-    print();
-     deletefirst();
-    print();
+    int a;
+    int ch,x;
+
+        printf("=====================\n");
+        printf("1.last insert element: \n");
+        printf("2.last delete element: \n");
+        printf("3.first insert element: \n");
+        printf("4.first delete element: \n");
+        printf("7.display\n");
+        printf("0.exit\n");
+        printf("=====================\n");
+    while(ch!=0)
+    {
+        
+        printf("enter your choice: ");
+        scanf("%d",&ch);
+
+        switch(ch)
+        {
+          case 1:
+             printf("insert element at last: ");
+             scanf("%d",&x);
+             insertEnd(x);
+             break;
+          
+          case 2:
+             deleteEnd();
+             break;
+
+          
+          case 3:
+            printf("insert element at first: ");
+             scanf("%d",&x);
+             insertfirst(x);
+             break;
+
+          
+          case 4:
+             deletefirst();
+             break;
+
+          case 7:
+             print() ;  
+
+          case 0:
+             break;
+            default:
+                printf("Worng choice.....!");
+        }
+        
+    }
 }
